@@ -25,9 +25,9 @@ class Button extends StatelessWidget {
         borderRadius: BorderRadius.circular(32),
         gradient: const LinearGradient(
           colors: [
-            Color(0xFF3AAFFF),
-            Color(0xFFFC6C75),
             Color(0xFFFFFFFF),
+            Color(0xFF333333),
+            Color(0xFFFFFFFF), 
           ],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
@@ -42,7 +42,7 @@ class Button extends StatelessWidget {
             borderRadius: BorderRadius.circular(32),
             side: const BorderSide(
               width: 1,
-              color: Colors.transparent,
+              color: Colors.white,
             ),
           ),
           padding: EdgeInsets.zero,
