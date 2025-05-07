@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transport_application/pages/load_board_screen.dart';
 import 'package:transport_application/widgets/icon_button.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -26,7 +27,9 @@ class HomeScreen extends StatelessWidget {
                   CustomIconButton(
                     icon: 'assets/images/load_board.png',
                     text: 'Load Board',
-                    onPressed: () => {},
+                    onPressed: () => {
+                      Navigator.pushNamed(context, LoadBoardScreen.routeName)
+                    },
                   ),
                   const SizedBox(height: 12),
                   CustomIconButton(
