@@ -5,6 +5,7 @@ import 'package:transport_application/pages/inspection_screen.dart';
 import 'package:transport_application/pages/load_board_screen.dart';
 import 'package:transport_application/pages/login_screen.dart';
 import 'package:transport_application/pages/order_details_screen.dart';
+import 'package:transport_application/pages/pickup_form_screen.dart';
 import 'package:transport_application/pages/register_screen.dart';
 import 'package:transport_application/pages/welcome_screen.dart';
 
@@ -48,6 +49,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case OrderDetailsScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => const OrderDetailsScreen(),
+      );
+
+    case PickUpFormScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const PickUpFormScreen(),
       );
 
     default:

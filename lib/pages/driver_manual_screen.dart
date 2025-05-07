@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transport_application/pages/pickup_form_screen.dart';
 import 'package:transport_application/widgets/button.dart';
 import 'package:transport_application/widgets/custom_appbar.dart';
 import 'package:transport_application/widgets/custom_navigationbar.dart';
@@ -76,13 +77,17 @@ class _DriverManualScreenState extends State<DriverManualScreen> {
                   Button(
                     text: 'Accept order ',
                     type: ButtonType.blue,
-                    onPressed: () => {},
+                    onPressed: () => {
+                      Navigator.pushNamed(context, PickUpFormScreen.routeName),
+                    },
                   ),
                   const SizedBox(height: 12),
                   Button(
                     text: 'Decline order',
                     type: ButtonType.red,
-                    onPressed: () => {},
+                    onPressed: () => {
+                      Navigator.pushNamed(context, PickUpFormScreen.routeName),
+                    },
                   ),
                 ],
               ),
