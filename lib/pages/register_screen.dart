@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:transport_application/pages/register_screen.dart';
 import 'package:transport_application/widgets/button.dart';
 import 'package:transport_application/widgets/input.dart';
 
-class LoginScreen extends StatefulWidget {
-  static const routeName = 'login';
+class RegisterScreen extends StatefulWidget {
+  static const routeName = 'register';
 
-  const LoginScreen({super.key});
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  bool _rememberMe = false;
+class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 100),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 56),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -31,14 +29,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 80,
                   width: 80,
                 ),
-                const SizedBox(height: 80),
+                const SizedBox(height: 64),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 4),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Login',
+                        'Registration',
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
@@ -47,49 +45,59 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       SizedBox(height: 24),
                       Input(
-                        hintText: "Email OR phone",
+                        hintText: "First Name",
+                        icon: Icons.check_box,
+                      ),
+                      SizedBox(height: 16),
+                      Input(
+                        hintText: "Last Name",
+                        icon: Icons.check_box,
+                      ),
+                      SizedBox(height: 16),
+                      Input(
+                        hintText: "Name of the Company",
+                        icon: Icons.check_box,
+                      ),
+                      SizedBox(height: 16),
+                      Input(
+                        hintText: "Email",
                         icon: Icons.email,
                       ),
                       SizedBox(height: 16),
                       Input(
-                        hintText: "Password",
-                        icon: Icons.lock,
+                        hintText: "Phone",
+                        icon: Icons.phone,
                         isPassword: true,
+                      ),
+                      SizedBox(height: 16),
+                      Input(
+                        hintText: "Picture",
+                        icon: Icons.photo,
+                        isPassword: true,
+                      ),
+                      SizedBox(height: 16),
+                      Input(
+                        hintText: "MC/DOT",
+                        icon: Icons.check_box,
+                      ),
+                      SizedBox(height: 16),
+                      Input(
+                        hintText: "A",
+                        icon: Icons.check_box,
+                      ),
+                      SizedBox(height: 16),
+                      Input(
+                        hintText: "W 9",
+                        icon: Icons.check_box,
+                      ),
+                      SizedBox(height: 16),
+                      Input(
+                        hintText: "WATCH",
+                        icon: Icons.check_box,
                       ),
                       SizedBox(height: 16),
                     ],
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: _rememberMe,
-                          onChanged: (bool? value) {
-                            setState(() {
-                              _rememberMe = value ?? false;
-                            });
-                          },
-                          activeColor: const Color(0xFF3AAFFF),
-                        ),
-                        const Text(
-                          'Remember me',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Forgot password?',
-                        style: TextStyle(
-                          color: Color(0xFF3AAFFF),
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
                 const SizedBox(height: 16),
                 Padding(
@@ -97,30 +105,28 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       Button(
-                        text: "Login",
+                        text: "Registration",
                         type: ButtonType.blue,
                         onPressed: () {},
                       ),
                       const SizedBox(height: 16),
                       GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(
-                              context, RegisterScreen.routeName);
-                        },
+                        onTap: () {},
                         child: const Text.rich(
                           TextSpan(
-                            text: "Don’t have an account? ",
-                            style: TextStyle(
-                                color: Color.fromRGBO(68, 81, 100, 1)),
+                            text: "Have an account? ",
+                            style:
+                                TextStyle(color: Color.fromRGBO(68, 81, 100, 1)),
                             children: [
                               TextSpan(
-                                text: "Sign Up",
+                                text: "Login",
                                 style: TextStyle(color: Color(0xFF3AAFFF)),
                               ),
                             ],
                           ),
                         ),
                       ),
+                      const SizedBox(height: 32),
                     ],
                   ),
                 ),

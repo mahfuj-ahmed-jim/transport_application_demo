@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:transport_application/pages/home_screen.dart';
 import 'package:transport_application/pages/login_screen.dart';
+import 'package:transport_application/pages/register_screen.dart';
 import 'package:transport_application/pages/welcome_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -13,6 +14,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case  LoginScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => const LoginScreen(),
+      );
+
+    case  RegisterScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const RegisterScreen(),
       );
 
     case HomeScreen.routeName:
