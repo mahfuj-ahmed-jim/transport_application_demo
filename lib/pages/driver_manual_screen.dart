@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:transport_application/pages/driver_manual_screen.dart';
 import 'package:transport_application/widgets/button.dart';
 import 'package:transport_application/widgets/custom_appbar.dart';
 import 'package:transport_application/widgets/custom_navigationbar.dart';
 
-class InspectionScreen extends StatefulWidget {
-  static const routeName = 'inspection';
-  const InspectionScreen({super.key});
+class DriverManualScreen extends StatefulWidget {
+  static const routeName = 'driver-manual';
+  const DriverManualScreen({super.key});
 
   @override
-  State<InspectionScreen> createState() => _InspectionScreenState();
+  State<DriverManualScreen> createState() => _DriverManualScreenState();
 }
 
-class _InspectionScreenState extends State<InspectionScreen> {
+class _DriverManualScreenState extends State<DriverManualScreen> {
   int _selectedIndex = 0;
 
   @override
@@ -62,27 +61,26 @@ class _InspectionScreenState extends State<InspectionScreen> {
               ),
               child: Column(
                 children: [
-                  const Text(
-                    'Order 1',
-                    style: TextStyle(fontSize: 14, color: Colors.white),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Text(
+                      'The vehicle needs to be picked up strictly at 4pm and taken out at 6pm',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Color(0xFFD9D9D9),
+                      ),
+                    ),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 20),
                   Button(
-                    text: 'Pick Up Information',
+                    text: 'Accept order ',
                     type: ButtonType.blue,
-                    onPressed: () => {
-                      Navigator.pushNamed(context, DriverManualScreen.routeName),
-                    },
-                  ),
-                  const SizedBox(height: 12),
-                  Button(
-                    text: 'Delivery information ',
-                    type: ButtonType.white,
                     onPressed: () => {},
                   ),
                   const SizedBox(height: 12),
                   Button(
-                    text: 'Start pickup inspection',
+                    text: 'Decline order',
                     type: ButtonType.red,
                     onPressed: () => {},
                   ),
