@@ -50,49 +50,51 @@ class _InspectionScreenState extends State<InspectionScreen> {
           ),
           Positioned(
             top: 375,
-            child: Container(
-              width: screenWidth - 32,
-              margin: const EdgeInsets.symmetric(horizontal: 16),
-              padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 24),
-              decoration: BoxDecoration(
-                color: const Color(0xFF14141A),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: Colors.white.withOpacity(0.1),
-                  width: 1,
+            child: SingleChildScrollView(
+              child: Container(
+                width: screenWidth - 32,
+                margin: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 24),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF14141A),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.1),
+                    width: 1,
+                  ),
                 ),
-              ),
-              child: Column(
-                children: [
-                  const Text(
-                    'Order 1',
-                    style: TextStyle(fontSize: 14, color: Colors.white),
-                  ),
-                  const SizedBox(height: 12),
-                  Button(
-                    text: 'Pick Up Information',
-                    type: ButtonType.blue,
-                    onPressed: () => {
-                      Navigator.pushNamed(context, DriverManualScreen.routeName),
-                    },
-                  ),
-                  const SizedBox(height: 12),
-                  Button(
-                    text: 'Delivery information ',
-                    type: ButtonType.white,
-                    onPressed: () => {
-                      Navigator.pushNamed(context, OrderDetailsScreen.routeName),
-                    },
-                  ),
-                  const SizedBox(height: 12),
-                  Button(
-                    text: 'Start pickup inspection',
-                    type: ButtonType.red,
-                    onPressed: () => {
-                      Navigator.pushNamed(context, TrackingScreen.routeName),
-                    },
-                  ),
-                ],
+                child: Column(
+                  children: [
+                    const Text(
+                      'Order 1',
+                      style: TextStyle(fontSize: 14, color: Colors.white),
+                    ),
+                    const SizedBox(height: 12),
+                    Button(
+                      text: 'Pick Up Information',
+                      type: ButtonType.blue,
+                      onPressed: () => {
+                        Navigator.pushNamed(context, DriverManualScreen.routeName),
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    Button(
+                      text: 'Delivery information ',
+                      type: ButtonType.white,
+                      onPressed: () => {
+                        Navigator.pushNamed(context, OrderDetailsScreen.routeName),
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    Button(
+                      text: 'Start pickup inspection',
+                      type: ButtonType.red,
+                      onPressed: () => {
+                        Navigator.pushNamed(context, TrackingScreen.routeName),
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

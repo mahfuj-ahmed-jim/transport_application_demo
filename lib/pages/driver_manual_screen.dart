@@ -49,48 +49,50 @@ class _DriverManualScreenState extends State<DriverManualScreen> {
           ),
           Positioned(
             top: 375,
-            child: Container(
-              width: screenWidth - 32,
-              margin: const EdgeInsets.symmetric(horizontal: 16),
-              padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 24),
-              decoration: BoxDecoration(
-                color: const Color(0xFF14141A),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: Colors.white.withOpacity(0.3),
-                  width: 1,
+            child: SingleChildScrollView(
+              child: Container(
+                width: screenWidth - 32,
+                margin: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 24),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF14141A),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.3),
+                    width: 1,
+                  ),
                 ),
-              ),
-              child: Column(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Text(
-                      'The vehicle needs to be picked up strictly at 4pm and taken out at 6pm',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFFD9D9D9),
+                child: Column(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        'The vehicle needs to be picked up strictly at 4pm and taken out at 6pm',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFFD9D9D9),
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 20),
-                  Button(
-                    text: 'Accept order ',
-                    type: ButtonType.blue,
-                    onPressed: () => {
-                      Navigator.pushNamed(context, PickUpFormScreen.routeName),
-                    },
-                  ),
-                  const SizedBox(height: 12),
-                  Button(
-                    text: 'Decline order',
-                    type: ButtonType.red,
-                    onPressed: () => {
-                      Navigator.pushNamed(context, PickUpFormScreen.routeName),
-                    },
-                  ),
-                ],
+                    const SizedBox(height: 20),
+                    Button(
+                      text: 'Accept order ',
+                      type: ButtonType.blue,
+                      onPressed: () => {
+                        Navigator.pushNamed(context, PickUpFormScreen.routeName),
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    Button(
+                      text: 'Decline order',
+                      type: ButtonType.red,
+                      onPressed: () => {
+                        Navigator.pushNamed(context, PickUpFormScreen.routeName),
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
