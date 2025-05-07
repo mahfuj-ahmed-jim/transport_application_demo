@@ -19,7 +19,7 @@ class _LoadBoardScreenState extends State<LoadBoardScreen> {
     {
       'orderName': 'Order 1',
       'status': 'In Progress',
-      'statusColor': Color(0xFF3AAFFF),
+      'statusColor': const Color(0xFF3AAFFF),
       'pickupLocation': 'Glendale, CA 91020',
       'miles': '51,6',
       'dropoffLocation': 'Anaheim, CA 92801',
@@ -29,7 +29,7 @@ class _LoadBoardScreenState extends State<LoadBoardScreen> {
     {
       'orderName': 'Order 2',
       'status': 'Completed',
-      'statusColor': Color(0xFF4CAF50),
+      'statusColor': const Color(0xFF4CAF50),
       'pickupLocation': 'Los Angeles, CA 90001',
       'miles': '120,4',
       'dropoffLocation': 'San Diego, CA 92101',
@@ -39,7 +39,7 @@ class _LoadBoardScreenState extends State<LoadBoardScreen> {
     {
       'orderName': 'Order 3',
       'status': 'In Progress',
-      'statusColor': Color(0xFF3AAFFF),
+      'statusColor': const Color(0xFF3AAFFF),
       'pickupLocation': 'Glendale, CA 91020',
       'miles': '51,6',
       'dropoffLocation': 'Anaheim, CA 92801',
@@ -81,6 +81,7 @@ class _LoadBoardScreenState extends State<LoadBoardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: const CustomAppbar(),
       body: SingleChildScrollView(
         child: Padding(

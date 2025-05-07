@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
@@ -12,45 +13,51 @@ class CustomBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 8, left: 16, right: 16, bottom: 24),
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.02),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.1),
-          width: 1,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12), // Ensures the blur respects the border radius
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), // Adds the blur effect
+        child: Container(
+          margin: const EdgeInsets.only(top: 8, left: 16, right: 16, bottom: 24),
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          decoration: BoxDecoration(
+            color: const Color(0xFF101018).withOpacity(0.8), // Semi-transparent background
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(
+              color: Colors.white.withOpacity(0.1),
+              width: 1,
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _buildNavItem(
+                context,
+                index: 0,
+                iconPath: 'assets/images/load_home.png',
+                label: 'Load Board',
+              ),
+              _buildNavItem(
+                context,
+                index: 1,
+                iconPath: 'assets/images/my_load.png',
+                label: 'My Loads',
+              ),
+              _buildNavItem(
+                context,
+                index: 2,
+                iconPath: 'assets/images/settings_home.png',
+                label: 'Settings',
+              ),
+              _buildNavItem(
+                context,
+                index: 3,
+                iconPath: 'assets/images/profile.png',
+                label: 'Profile',
+              ),
+            ],
+          ),
         ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          _buildNavItem(
-            context,
-            index: 0,
-            iconPath: 'assets/images/load_home.png',
-            label: 'Load Board',
-          ),
-          _buildNavItem(
-            context,
-            index: 1,
-            iconPath: 'assets/images/my_load.png',
-            label: 'My Loads',
-          ),
-          _buildNavItem(
-            context,
-            index: 2,
-            iconPath: 'assets/images/settings_home.png',
-            label: 'Settings',
-          ),
-          _buildNavItem(
-            context,
-            index: 3,
-            iconPath: 'assets/images/profile.png',
-            label: 'Profile',
-          ),
-        ],
       ),
     );
   }

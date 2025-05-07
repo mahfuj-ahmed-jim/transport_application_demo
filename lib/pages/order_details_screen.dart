@@ -20,6 +20,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+      extendBody: true,
       appBar: const CustomAppbar(),
       body: Stack(
         children: [

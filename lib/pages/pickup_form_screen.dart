@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:transport_application/pages/driver_manual_screen.dart';
-import 'package:transport_application/pages/order_details_screen.dart';
 import 'package:transport_application/widgets/button.dart';
 import 'package:transport_application/widgets/custom_appbar.dart';
 import 'package:transport_application/widgets/custom_navigationbar.dart';
@@ -23,6 +22,7 @@ class _PickUpFormScreenState extends State<PickUpFormScreen> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+      extendBody: true,
       appBar: const CustomAppbar(),
       body: Stack(
         children: [

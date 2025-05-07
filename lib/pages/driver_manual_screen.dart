@@ -21,6 +21,7 @@ class _DriverManualScreenState extends State<DriverManualScreen> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+      extendBody: true,
       appBar: const CustomAppbar(),
       body: Stack(
         children: [

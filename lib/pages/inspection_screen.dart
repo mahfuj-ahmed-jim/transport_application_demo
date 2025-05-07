@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:transport_application/pages/driver_manual_screen.dart';
 import 'package:transport_application/pages/order_details_screen.dart';
-import 'package:transport_application/pages/pickup_form_screen.dart';
+import 'package:transport_application/pages/tracking_screen.dart';
 import 'package:transport_application/widgets/button.dart';
 import 'package:transport_application/widgets/custom_appbar.dart';
 import 'package:transport_application/widgets/custom_navigationbar.dart';
@@ -89,7 +89,7 @@ class _InspectionScreenState extends State<InspectionScreen> {
                     text: 'Start pickup inspection',
                     type: ButtonType.red,
                     onPressed: () => {
-                      Navigator.pushNamed(context, PickUpFormScreen.routeName),
+                      Navigator.pushNamed(context, TrackingScreen.routeName),
                     },
                   ),
                 ],
