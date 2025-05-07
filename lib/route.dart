@@ -4,6 +4,7 @@ import 'package:transport_application/pages/home_screen.dart';
 import 'package:transport_application/pages/inspection_screen.dart';
 import 'package:transport_application/pages/load_board_screen.dart';
 import 'package:transport_application/pages/login_screen.dart';
+import 'package:transport_application/pages/order_details_screen.dart';
 import 'package:transport_application/pages/register_screen.dart';
 import 'package:transport_application/pages/welcome_screen.dart';
 
@@ -42,6 +43,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case DriverManualScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => const DriverManualScreen(),
+      );
+
+    case OrderDetailsScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const OrderDetailsScreen(),
       );
 
     default:

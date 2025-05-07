@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:transport_application/pages/driver_manual_screen.dart';
+import 'package:transport_application/pages/order_details_screen.dart';
 import 'package:transport_application/widgets/button.dart';
 import 'package:transport_application/widgets/custom_appbar.dart';
 import 'package:transport_application/widgets/custom_navigationbar.dart';
@@ -56,7 +57,7 @@ class _InspectionScreenState extends State<InspectionScreen> {
                 color: const Color(0xFF14141A),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: Colors.white.withOpacity(0.3),
+                  color: Colors.white.withOpacity(0.1),
                   width: 1,
                 ),
               ),
@@ -78,7 +79,9 @@ class _InspectionScreenState extends State<InspectionScreen> {
                   Button(
                     text: 'Delivery information ',
                     type: ButtonType.white,
-                    onPressed: () => {},
+                    onPressed: () => {
+                      Navigator.pushNamed(context, OrderDetailsScreen.routeName),
+                    },
                   ),
                   const SizedBox(height: 12),
                   Button(

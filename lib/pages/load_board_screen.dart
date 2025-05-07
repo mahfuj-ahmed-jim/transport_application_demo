@@ -99,7 +99,7 @@ class _LoadBoardScreenState extends State<LoadBoardScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: Colors.white.withOpacity(0.3),
+                    color: Colors.white.withOpacity(0.1),
                     width: 1,
                   ),
                 ),
@@ -152,7 +152,7 @@ class _LoadBoardScreenState extends State<LoadBoardScreen> {
                         color: const Color(0xFF14141A),
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(
-                          color: Colors.white.withOpacity(0.3),
+                          color: Colors.white.withOpacity(0.1),
                           width: 1,
                         ),
                       ),
@@ -176,7 +176,7 @@ class _LoadBoardScreenState extends State<LoadBoardScreen> {
                                   color: order['statusColor'],
                                   borderRadius: BorderRadius.circular(4),
                                   border: Border.all(
-                                    color: Colors.white.withOpacity(0.3),
+                                    color: Colors.white.withOpacity(0.1),
                                     width: 1,
                                   ),
                                 ),

@@ -19,7 +19,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         color: Colors.white.withOpacity(0.02),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.white.withOpacity(0.3),
+          color: Colors.white.withOpacity(0.1),
           width: 1,
         ),
       ),
