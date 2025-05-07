@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:transport_application/pages/home_screen.dart';
+import 'package:transport_application/pages/login_screen.dart';
 import 'package:transport_application/widgets/button.dart';
 import 'package:transport_application/widgets/input.dart';
 
@@ -16,7 +18,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0D0D0D),
+      backgroundColor: const Color(0xFF101018),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -107,11 +109,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Button(
                         text: "Registration",
                         type: ButtonType.blue,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, HomeScreen.routeName);
+                        },
                       ),
                       const SizedBox(height: 16),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, LoginScreen.routeName);
+                        },
                         child: const Text.rich(
                           TextSpan(
                             text: "Have an account? ",
