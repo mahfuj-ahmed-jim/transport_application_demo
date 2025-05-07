@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transport_application/pages/inspection_screen.dart';
 import 'package:transport_application/widgets/custom_appbar.dart';
 import 'package:transport_application/widgets/custom_navigationbar.dart';
 
@@ -139,129 +140,134 @@ class _LoadBoardScreenState extends State<LoadBoardScreen> {
               ),
               ...orders.map(
                 (order) {
-                  return Container(
-                    margin: const EdgeInsets.only(top: 10),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 16),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF14141A),
-                      borderRadius: BorderRadius.circular(14),
-                      border: Border.all(
-                        color: Colors.white.withOpacity(0.3),
-                        width: 1,
+                  return GestureDetector(
+                    onTap: () => {
+                      Navigator.pushNamed(context, InspectionScreen.routeName)
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 16),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF14141A),
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(
+                          color: Colors.white.withOpacity(0.3),
+                          width: 1,
+                        ),
                       ),
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              order['orderName'],
-                              style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 6, horizontal: 16),
-                              decoration: BoxDecoration(
-                                color: order['statusColor'],
-                                borderRadius: BorderRadius.circular(4),
-                                border: Border.all(
-                                  color: Colors.white.withOpacity(0.3),
-                                  width: 1,
-                                ),
-                              ),
-                              child: Text(
-                                order['status'],
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                order['orderName'],
                                 style: const TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
                                 ),
                               ),
-                            )
-                          ],
-                        ),
-                        const SizedBox(height: 16),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              order['pickupLocation'],
-                              style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              'Miles:  ${order['miles']}',
-                              style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 12),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              order['dropoffLocation'],
-                              style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              'Price  ${order['price']}',
-                              style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 18),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset(
-                                  'assets/images/truck.png',
-                                  height: 11,
-                                  width: 18,
-                                ),
-                                const SizedBox(width: 6),
-                                const Text(
-                                  'Left',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xFF526279),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 6, horizontal: 16),
+                                decoration: BoxDecoration(
+                                  color: order['statusColor'],
+                                  borderRadius: BorderRadius.circular(4),
+                                  border: Border.all(
+                                    color: Colors.white.withOpacity(0.3),
+                                    width: 1,
                                   ),
                                 ),
-                              ],
-                            ),
-                            Text(
-                              order['timeLeft'],
-                              style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xFFA9B1B9),
+                                child: Text(
+                                  order['status'],
+                                  style: const TextStyle(
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          const SizedBox(height: 16),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                order['pickupLocation'],
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
                               ),
-                            ),
-                          ],
-                        )
-                      ],
+                              Text(
+                                'Miles:  ${order['miles']}',
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 12),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                order['dropoffLocation'],
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                'Price  ${order['price']}',
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 18),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/truck.png',
+                                    height: 11,
+                                    width: 18,
+                                  ),
+                                  const SizedBox(width: 6),
+                                  const Text(
+                                    'Left',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xFF526279),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                order['timeLeft'],
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xFFA9B1B9),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },

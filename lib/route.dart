@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:transport_application/pages/home_screen.dart';
+import 'package:transport_application/pages/inspection_screen.dart';
 import 'package:transport_application/pages/load_board_screen.dart';
 import 'package:transport_application/pages/login_screen.dart';
 import 'package:transport_application/pages/register_screen.dart';
@@ -30,6 +31,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case LoadBoardScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => const LoadBoardScreen(),
+      );
+
+    case InspectionScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const InspectionScreen(),
       );
 
     default:
