@@ -6,6 +6,9 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: const Color(0xFF101018),
+      forceMaterialTransparency: true,
+      elevation: 0,
       leadingWidth: 120,
       toolbarHeight: 56,
       leading: GestureDetector(
