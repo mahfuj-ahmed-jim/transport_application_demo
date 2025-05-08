@@ -19,6 +19,7 @@ class _PickUpFormScreenState extends State<PickUpFormScreen> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -49,13 +50,14 @@ class _PickUpFormScreenState extends State<PickUpFormScreen> {
             ),
           ),
           Positioned(
-            top: 375,
+            // top: 375,
             child: SizedBox(
-              height: MediaQuery.of(context).size.height - 375,
+              height: screenHeight,
               width: screenWidth,
               child: ListView(
                 padding: EdgeInsets.zero,
                 children: [
+                  const SizedBox(height: 375),
                   SizedBox(
                     width: screenWidth,
                     child: SingleChildScrollView(
@@ -215,7 +217,7 @@ class _PickUpFormScreenState extends State<PickUpFormScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 100),
+                  const SizedBox(height: 120),
                 ],
               ),
             ),
