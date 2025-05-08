@@ -50,9 +50,11 @@ class _PickUpFormScreenState extends State<PickUpFormScreen> {
           ),
           Positioned(
             top: 375,
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height - 375,
+              width: screenWidth,
+              child: ListView(
+                padding: EdgeInsets.zero,
                 children: [
                   SizedBox(
                     width: screenWidth,
@@ -213,6 +215,7 @@ class _PickUpFormScreenState extends State<PickUpFormScreen> {
                       ],
                     ),
                   ),
+                  const SizedBox(height: 100),
                 ],
               ),
             ),

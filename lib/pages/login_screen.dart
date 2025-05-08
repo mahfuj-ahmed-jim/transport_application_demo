@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 100),
+            padding: const EdgeInsets.only(left: 16, right: 20, top: 100),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 80),
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -65,14 +65,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Row(
                       children: [
-                        Checkbox(
-                          value: _rememberMe,
-                          onChanged: (bool? value) {
-                            setState(() {
-                              _rememberMe = value ?? false;
-                            });
-                          },
-                          activeColor: const Color(0xFF3AAFFF),
+                        Transform.scale(
+                          scale: 0.8,
+                          child: Checkbox(
+                            value: _rememberMe,
+                            splashRadius: 0,
+                            onChanged: (bool? value) {
+                              setState(() {
+                                _rememberMe = value ?? false;
+                              });
+                            },
+                            activeColor: const Color(0xFF3AAFFF),
+                          ),
                         ),
                         const Text(
                           'Remember me',

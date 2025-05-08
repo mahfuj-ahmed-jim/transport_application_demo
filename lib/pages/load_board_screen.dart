@@ -82,6 +82,7 @@ class _LoadBoardScreenState extends State<LoadBoardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
+      backgroundColor: const Color(0xFF101018),
       appBar: const CustomAppbar(),
       body: SingleChildScrollView(
         child: Padding(
